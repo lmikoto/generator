@@ -1,0 +1,20 @@
+database:
+  driverClass: "com.mysql.cj.jdbc.Driver"
+  url: "jdbc:mysql://localhost:3306/generator?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=false&serverTimezone=Asia/Shanghai"
+  dbName: "generator"
+  username: "root"
+  password: "root"
+
+basePackage: "io.github.lmikoto"
+author: "lmikoto"
+targetProject: "/Users/yonghu/Desktop/mine/railigun-test"
+moduleName: "generator"
+tables:
+  - tableName: "table_name"
+templates:
+  - name: "mapper"
+    covered: true
+    templateFile: "terminus/mapper.vm"
+    targetPath: "${targetProject}/src/main/resources/mapper/"
+    targetFileName: "${table.modelName}Mapper.xml"
+    encoding: "utf-8"
